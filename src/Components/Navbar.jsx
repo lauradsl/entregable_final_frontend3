@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
 
         <Link to='/home'>Home</Link>
-        <Link to='/dentist/:id'>Dentista</Link>
+        
         <Link to='/contacto'>Contacto</Link>
         <Link to='favs'>Favoritos</Link>
 
