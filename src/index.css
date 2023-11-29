@@ -26,9 +26,11 @@ h1{
 nav{
   display: flex;
   width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 1rem;
-  
+  align-items: center; 
+  margin: 0 auto
+   
   
 }
 
@@ -120,6 +122,13 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
+
+.light
+{
+  background-color: white;
+  color: black ;
+}
+
 .dark > a {
   color: white;
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-const Card = ({ name, username, id }) => 
+const Card = ({ name, username, id, dentista }) => 
 {
   function cardReducer(state,action)
   {
@@ -44,16 +44,26 @@ const Card = ({ name, username, id }) =>
       }
   }
 
-
-  useEffect(() => 
+  const mostrarFavoritos = () => 
   {
-    const guardarFavorito = JSON.parse(localStorage.getItem('favoritos'))
-    dispatchFavoritos({ type: 'mostrarFavoritos', payload: guardarFavorito });
+    const guardarFavorito = JSON.parse(localStorage.getItem("favoritos"))
+    //console.log("Favoritos mostrados:", guardarFavorito);
+    return (() =>
+    {
+      dispatchFavoritos({ type: 'mostrarFavoritos', payload: guardarFavorito });
+    })
+  };
+
+  useEffect(() =>
+  {
+    return (mostrarFavoritos())
+  },[])
   
-  }, []);
 
 
   return (
+
+    <>
     <div className="card">
       <img src="../public/images/doctor.jpg" alt="Doctor" className="imagen"/>
         {/* En cada card deberan mostrar en name - username y el id */}
@@ -68,12 +78,15 @@ const Card = ({ name, username, id }) =>
         
         <button onClick={addFav} className="favButton">Add fav</button>
         <Link to={`/dentist/${id}`}></Link>
+
+        
     </div>
+    </>
+    
   );
 };
 
 export default Card;
-
 
 
 /*
@@ -88,7 +101,6 @@ useEffect(() =>
       console.log("se ha guardado: ", name, username, id)
      }
      
-     
    }, []);
    
    
@@ -99,4 +111,19 @@ useEffect(() =>
     console.log("Favoritos mostrados:", guardarFavorito);
   };
    
+
+//ESTE TIENE MENOS RENDERIZADOS
+useEffect(() =>
+{
+  
+  const guardarFavorito = JSON.parse(localStorage.getItem('favoritos')) || []
+  return(() =>{
+    dispatchFavoritos({ type: 'mostrarFavoritos', payload: guardarFavorito })
+    console.log("Favoritos guardados",favoritos)
+  })
+
+},[])
+
+
+<Favs renderizarFavorito = {mostrarFavoritos}/>
    */

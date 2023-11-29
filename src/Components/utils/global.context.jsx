@@ -12,9 +12,27 @@ export const ContextProvider = ({ children }) =>
   const [listaDentistas, setListaDentistas] = useState([]);
   const [dentistas, setDentistas] = useState([]);
   const params = useParams();
+  const [tema, setTema] = useState("light");
 
+
+
+  //CAMBIO DE TEMA
+  const cambioTema = () => 
+  {
+    const nuevaTema = tema === "light" ? "dark" : "light"
+    setTema(nuevaTema)
+    localStorage.setItem("tema", nuevaTema)
+  }
+
+  useEffect(() => 
+  {
+    const temaAlmacenado = localStorage.getItem("tema");
+    if (temaAlmacenado) 
+    {
+      setTema(temaAlmacenado);
+    }
+  }, []);
   
-
   
   //HOME
   useEffect(()=>
@@ -49,7 +67,7 @@ export const ContextProvider = ({ children }) =>
 },[params.id])
 
   return (
-    <ContextGlobal.Provider value={{listaDentistas, dentistas, isDarkTheme, cambiarTema}}>
+    <ContextGlobal.Provider value={{listaDentistas, dentistas, tema, cambioTema}}>
       {children}
     </ContextGlobal.Provider>
   );

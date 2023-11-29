@@ -7,7 +7,8 @@ import { ContextGlobal } from '../Components/utils/global.context'
 const Detail = () => {
  
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-  const {dentistas} = useContext(ContextGlobal)
+  const {dentistas, tema} = useContext(ContextGlobal)
+  
   
 
   
@@ -16,7 +17,7 @@ const Detail = () => {
   return (
     <>
     <h1>Detalles del dentista: {dentistas.id} </h1>
-    <div className='table'>
+    <div className= {`table App ${tema}`}>
     
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}

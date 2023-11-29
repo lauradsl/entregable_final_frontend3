@@ -8,11 +8,11 @@ import React from "react";
 const Home = () => 
 {
 
-  const {listaDentistas} = useContext(ContextGlobal)
+  const {listaDentistas, tema} = useContext(ContextGlobal)
   
  
   return (
-    <main className="" >
+    <main className = {`App ${tema}`} >
       <h1>Home</h1>
       <div className='card-grid'>
 
@@ -32,4 +32,4 @@ const Home = () =>
   )
 }
 
-export default Home
+export default React.memo(Home)
