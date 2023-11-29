@@ -7,34 +7,25 @@ import { ContextGlobal } from '../Components/utils/global.context'
 const Detail = () => {
  
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-  const {dentista} = useContext(ContextGlobal)
-
-  
-    try
-    {
-      if(!dentista)
-      {
-        console.log(dentista)
-      }
-    } catch (error)
-      {
-        console.log("No se ha encontrado el dentista")
-      }
+  const {dentistas} = useContext(ContextGlobal)
   
 
+  
   //INFO DENTISTAS
-  
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      
+    <h1>Detalles del dentista: {dentistas.id} </h1>
+    <div className='table'>
+    
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-      <p>Name: </p>
-      <p>Email: </p>
-      <p>Phone: </p>
-      <p>Website: </p>
+      <p>Name: {dentistas.name} </p>
+      <p>Email: {dentistas.email} </p>
+      <p>Phone: {dentistas.phone} </p>
+      <p>Website: {dentistas.website} </p>
+
+      </div>
 
     </>
   )

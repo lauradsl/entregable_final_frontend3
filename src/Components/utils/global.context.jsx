@@ -14,6 +14,8 @@ export const ContextProvider = ({ children }) =>
   const params = useParams();
 
   
+
+  
   //HOME
   useEffect(()=>
   {
@@ -47,7 +49,7 @@ export const ContextProvider = ({ children }) =>
 },[params.id])
 
   return (
-    <ContextGlobal.Provider value={{listaDentistas, dentistas}}>
+    <ContextGlobal.Provider value={{listaDentistas, dentistas, isDarkTheme, cambiarTema}}>
       {children}
     </ContextGlobal.Provider>
   );

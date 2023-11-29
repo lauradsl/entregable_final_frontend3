@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
+ 
   return (
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
