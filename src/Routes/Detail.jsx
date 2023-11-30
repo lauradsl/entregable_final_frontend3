@@ -9,10 +9,6 @@ const Detail = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   const {dentistas, tema} = useContext(ContextGlobal)
   
-  
-
-  
-  //INFO DENTISTAS
 
   return (
     <>
@@ -34,6 +30,3 @@ const Detail = () => {
 
 export default Detail
 
-/*<Link to={`/dentist/${id}`}>
-        Ver detalles
-      </Link>*/

@@ -25,7 +25,7 @@ const Form = () =>
         {
           setMensaje("El email no cumple con las condiciones")
         } else{
-            setMensaje("Gracias " + nombre + " te contactaremos cuando antes vía mail")
+            setMensaje("Gracias " + nombre + " te contactaremos cuanto antes vía mail")
         }
           
     }

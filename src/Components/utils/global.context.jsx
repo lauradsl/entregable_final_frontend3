@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import { useMemo } from "react";
 export const initialState = {theme: "", data: []}
 
 export const ContextGlobal = createContext(undefined);
@@ -66,30 +66,23 @@ export const ContextProvider = ({ children }) =>
   }
 },[params.id])
 
+const memoContext = useMemo(
+  () => 
+  ({
+    listaDentistas,
+    dentistas,
+    tema,
+    cambioTema,
+  }),
+  [listaDentistas, dentistas, tema, cambioTema]
+);
+
+
   return (
-    <ContextGlobal.Provider value={{listaDentistas, dentistas, tema, cambioTema}}>
+    <ContextGlobal.Provider value={memoContext}>
       {children}
     </ContextGlobal.Provider>
   );
 };
 
-
-/*
- useEffect(()=>
-  {
-    const getDentista = async(params) =>
-    {
-      try
-      {
-        console.log("ID del parámetro:", params.id);
-        const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-        setDentistas(res.data)
-      }  catch (error)
-      {
-        console.log(error)
-      }
-    }
-
-        getDentista(params)
-    },[params])*/
 

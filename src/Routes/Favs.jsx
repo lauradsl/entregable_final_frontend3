@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../Components/Card";
 import { ContextGlobal } from '../Components/utils/global.context'
 import { useContext } from 'react'
+import { Link } from "react-router-dom";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -32,12 +33,23 @@ const Favs = () =>
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}
 
+        
         {favs.map((dentista) =>(
-          <Card  
+          <Card
             key = {dentista.id}
+            id = {dentista.id}
             name = {dentista.name}
-            username = {dentista.username} />
+            username = {dentista.username} 
+          />
+          
+  
         ))}
+
+     
+        
+
+
+
          
       </div>
     </>

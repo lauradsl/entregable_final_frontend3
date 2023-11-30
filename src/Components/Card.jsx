@@ -1,10 +1,10 @@
 import React from "react";
 import { useReducer, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";  
 
 
 
-const Card = ({ name, username, id, dentista }) => 
+const Card = ({ name, username, id }) => 
 {
   function cardReducer(state,action)
   {
@@ -91,26 +91,6 @@ export default Card;
 
 /*
 
-// Se usa useEffect para actualizar localStorage cuando la lista de favoritos cambie
-useEffect(() => 
-   {
-     const guardarFavorito = JSON.parse(localStorage.getItem("favoritos"))
-     if(guardarFavorito)
-     {
-      dispatchFavoritos({type: 'mostrarFavoritos', payload: guardarFavorito})
-      console.log("se ha guardado: ", name, username, id)
-     }
-     
-   }, []);
-   
-   
-    const mostrarFavoritos = () => 
-  {
-    const guardarFavorito = JSON.parse(localStorage.getItem("favoritos")) || [];
-    dispatchFavoritos({ type: 'mostrarFavoritos', payload: guardarFavorito });
-    console.log("Favoritos mostrados:", guardarFavorito);
-  };
-   
 
 //ESTE TIENE MENOS RENDERIZADOS
 useEffect(() =>
@@ -124,6 +104,4 @@ useEffect(() =>
 
 },[])
 
-
-<Favs renderizarFavorito = {mostrarFavoritos}/>
    */

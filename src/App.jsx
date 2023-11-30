@@ -4,7 +4,10 @@ import Navbar from "./Components/Navbar";
 import { ContextProvider } from "./Components/utils/global.context";
 
 
-function App() {
+function App() 
+{
+
+  
   return (
       <div className="App">
         <ContextProvider>
