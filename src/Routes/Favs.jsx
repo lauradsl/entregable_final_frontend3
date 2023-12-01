@@ -16,10 +16,8 @@ const Favs = () =>
  
   useEffect(() => 
   {
-    
       setFavs(getFavorito);
       console.log("Lista favoritos", getFavorito)
-    
   }, []);
 
 
@@ -44,12 +42,6 @@ const Favs = () =>
           
   
         ))}
-
-     
-        
-
-
-
          
       </div>
     </>
@@ -60,15 +52,14 @@ export default Favs;
 
 
 /*
-
+PRUEBAS:
   useEffect(() =>
   {
     const renderizarFavoritos = JSON.parse(localStorage.getItem("favoritos"));
     return(() =>{
       setFavs(renderizarFavoritos)
     })
-    
-    
+  
     
   }, [])
   

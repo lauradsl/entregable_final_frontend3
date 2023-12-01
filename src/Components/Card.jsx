@@ -89,10 +89,9 @@ const Card = ({ name, username, id }) =>
 export default Card;
 
 
+
 /*
-
-
-//ESTE TIENE MENOS RENDERIZADOS
+PRUEBAS:
 useEffect(() =>
 {
   
